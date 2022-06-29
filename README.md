@@ -153,6 +153,11 @@ Spring Core
                             <constructor-arg index="0" ref="ed2" />
                         </bean>
 
+                         
+                        <bean id="dataFile" class="java.io.File" >
+                            <constructor-arg index="0" value="./myfile.txt" />
+                        </bean>
+
                     </beans>
 
                 ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
@@ -160,3 +165,50 @@ Spring Core
                 EmployeeService empService1 = (EmployeeService) context.getBean("es1");                
                 EmployeeService empService2 = (EmployeeService) context.getBean("es1");                
                 EmployeeService empService3 = (EmployeeService) context.getBean("es1");                
+
+        Annotation Based Configuaration
+
+            @Component("as")
+            public class ArithemticService {                <bean class="ArithemticService" id="as" />
+                .....
+            }
+            
+            @Component
+            public class ArithemticService {                <bean class="ArithemticService" id="arithemticService" />
+                .....
+            }
+
+            @Component
+                @Service
+                @Repository
+                ....etc.,
+
+            @Service
+            public class ArithemticService {                <bean class="ArithemticService" id="arithemticService" />
+                .....
+            }
+
+            @Scope("")
+            @PostConstruct
+            @PreDestroy
+
+            @Value
+            @Autowired
+
+            @Configuaration
+            @ComponentScan("base-package")
+            public class Myconfig {
+
+            }
+
+        Java Based Configuaration
+        
+            @Configuaration
+            @ComponentScan("base-package")
+            public class Myconfig {
+
+                @Bean
+                public File dataFile(){
+                    return new File("./myfile.txt");
+                }
+            }
