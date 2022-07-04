@@ -212,3 +212,36 @@ Spring Core
                     return new File("./myfile.txt");
                 }
             }
+
+    Spring Boot
+    -------------------------------------------------------------------------------------
+
+        is spring module that offers auto-configuaration and there by 
+        supporting Rapid Application Development.
+
+        1. spring initilizer web tool
+        2. STS
+        3. Spring Boot CLI
+
+        @SpringBootApplication = @AutoConfiguaration + @ComponentScan + @PropertySource + @Configuaraiton
+
+        the application initiation is always guided by speacial classes implementing Runners.
+
+        CommadLineRunner is an interface that has to be implemented by classes that
+        serves as the application entry point.
+
+    Assignment
+    ------------------------------------------------------------------------------------------
+
+        Develop a Spring Boot DI applciation as below:
+
+            EmployeeRepo    <---> EmployeeService <-----> EmployeeCrudScreen (CommandLineRunner)
+                Map<Long,Employee>      
+
+                offer                   offer the                   needs to accept the operation 
+                method to               method to                   from the user and delegate it to the underlying service
+                add,remove,             add,remove,                 and the display the result coming from the service.
+                retrive                 retrive employees
+                employees               by delegating the calls
+                                        to the underlying repo
+                                        after required validation
