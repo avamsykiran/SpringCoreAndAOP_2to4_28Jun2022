@@ -245,3 +245,15 @@ Spring Core
                 employees               by delegating the calls
                                         to the underlying repo
                                         after required validation
+
+    Spring Data Jdbc
+    -----------------------------------------------------------------------------------------------------------
+
+        is module of spring framework used to connect a database .
+
+        JdbcTemplate
+        NamedParameterJdbcTemplate
+                update
+                query
+                queryForObject
+
